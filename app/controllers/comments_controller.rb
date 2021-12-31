@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :update, :destroy]
-  before_action :authorized
+  # before_action :authorized
   # GET /comments
   def index
     @comments = Comment.where(user_id: @user.id)

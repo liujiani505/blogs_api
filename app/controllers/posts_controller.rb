@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :update, :destroy]
-  before_action :authorized
+  # before_action :authorized
   # GET /posts
   def index
     @posts = Post.where(user_id: @user.id)
