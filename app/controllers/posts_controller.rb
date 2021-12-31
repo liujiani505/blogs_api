@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    @posts = Post.where(user_id: @user.id)
+    @posts = Post.all
 
     render json: @posts
   end
@@ -16,7 +16,6 @@ class PostsController < ApplicationController
   # POST /posts
   def create
     @post = Post.new(post_params)
-    @post.user_id = @user.id
 
     if @post.save
       render json: @post, status: :created, location: @post
