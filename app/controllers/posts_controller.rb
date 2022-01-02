@@ -1,10 +1,9 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :update, :destroy]
-  # before_action :authorized 
+  before_action :authorized 
   # GET /posts
   def index
-    # @posts = Post.where(user_id: @user.id)
-    @posts = Post.all
+    @posts = Post.where(user_id: @user.id)
 
     render json: @posts
   end
@@ -17,7 +16,7 @@ class PostsController < ApplicationController
   # POST /posts
   def create
     @post = Post.new(post_params)
-    # @post.user_id = @user.id
+    @post.user_id = @user.id
 
     if @post.save
       render json: @post, status: :created, location: @post
