@@ -3,8 +3,8 @@ class PostsController < ApplicationController
   before_action :authorized 
   # GET /posts
   def index
-    # @posts = Post.where(user_id: @user.id)
-    @posts = Post.all
+    @posts = Post.where(user_id: @user.id)
+    # @posts = Post.all
     render json: @posts
   end
 
