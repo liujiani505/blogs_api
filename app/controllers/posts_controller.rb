@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   def index
     # @posts = Post.where(user_id: @user.id)
-    @posts = Post.all
+    @posts = Post.all.order("created_at ASC")
     render json: @posts
   end
 
