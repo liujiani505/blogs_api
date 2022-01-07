@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_12_26_200459) do
     t.string "content"
     t.bigint "user_id", null: false
     t.bigint "post_id", null: false
+    t.string "username"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
@@ -29,6 +30,7 @@ ActiveRecord::Schema.define(version: 2021_12_26_200459) do
     t.string "title"
     t.string "content"
     t.string "img_url"
+    t.string "username"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
